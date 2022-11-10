@@ -11,22 +11,17 @@
         android:theme="@style/Theme.QuizApp">
 
         <activity
-            android:name=".ChoseContactActivity"
-            android:exported="false"
-            android:label="@string/title_activity_chose_contact"
-            android:theme="@style/Theme.QuizApp.NoActionBar" />
-        <activity
-            android:name=".DisplayMessageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name="com.example.ui.activityFirst.ActivityFirst"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.example.ui.activitySecond.ActivitySecond"
+            android:exported="true" />
     </application>
 
 </manifest>
