@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragmentSecond"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/fragmentThird"
+        android:title="Quiz time" />
+
+    <item
+        android:id="@+id/fragmentForth"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/fragmentQuestionList"
+        android:title="List of questions" />
+
+</menu>

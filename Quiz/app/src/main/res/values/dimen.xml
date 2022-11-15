@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--default spaces-->
+    <dimen name="default_space">16dp</dimen>
+    <dimen name="default_space_medium">10dp</dimen>
+    <dimen name="default_space_half">8dp</dimen>
+    <dimen name="default_space_small">4dp</dimen>
+    <dimen name="default_space_double">32dp</dimen>
+    <dimen name="default_space_triple">48dp</dimen>
+    <dimen name="default_space_quadruple">64dp</dimen>
+
+    <!--default corners-->
+    <dimen name="default_corners">9sp</dimen>
+    <dimen name="default_corners_small">5sp</dimen>
+    <dimen name="default_corners_big">19sp</dimen>
+</resources>
