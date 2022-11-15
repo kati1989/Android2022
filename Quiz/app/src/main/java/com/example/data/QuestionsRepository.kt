@@ -6,12 +6,11 @@ object QuestionsRepository {
         return arrayOfQuestions
     }
 
+
+
     fun getFiveRandomQuestions(): MutableList<Question> {
-        val questions = mutableListOf<Question>()
-        repeat(5) {
-            questions.add(arrayOfQuestions.random())
-        }
-        return questions
+        val fiveRandomQuestions = arrayOfQuestions.asSequence().shuffled().take(5).toMutableList()
+        return fiveRandomQuestions
     }
 
     private val arrayOfQuestions = mutableListOf(
