@@ -82,14 +82,19 @@ class FragmentQuizStarted : Fragment() {
     }
 
     private fun setGameRules() {
+        //ellenorzom a helyes valaszt
         if (viewModel.firstQuestionInList.value?.correct == viewModel.idRbChecked.value) {
             viewModel.totalScore.value = viewModel.totalScore.value?.plus(1)
         }
+        //ha nincs tobb kerdes akkor a FragmentEndQuizbenavigalunk
         if (viewModel.fiveRandomQuestions.value?.isEmpty() == true) {
             goToEndQuizFragment()
         }
+        // ha van meg kerdes akkor kitoruljuk a radio gomb szeleciot
         clearRadioGroup()
+        //kiveszunk egy kerdest a listabol es belehelyezzuk az aktualis kerdes valtozoba
         viewModel.removeFirstQuestionFromListAndChangeFirstQuestion()
+        //feltoltjuk a a kerdes illetve a lehetseges valaszok mezoit
         viewModel.firstQuestionInList.value?.let { it1 -> createRadioGroupAndPopulateIt(it1) }
     }
 
