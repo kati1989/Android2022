@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_home"
+    app:startDestination="@id/fragmentActivities">
+
+    <fragment
+        android:id="@+id/fragmentActivities"
+        android:name="com.treetrack.FragmentActivities"
+        android:label="FragmentActivities"
+        tools:layout="@layout/fragment_activities" />
+
+    <fragment
+        android:id="@+id/fragmentMyTasks"
+        android:name="com.treetrack.FragmentMyTasks"
+        android:label="FragmentMyTasks"
+        tools:layout="@layout/fragment_my_tasks" />
+
+    <fragment
+        android:id="@+id/fragmentMyGroups"
+        android:name="com.treetrack.FragmentMyGroups"
+        android:label="FragmentMyGroups"
+        tools:layout="@layout/fragment_my_groups" />
+
+</navigation>
