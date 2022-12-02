@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentLogin"
-        android:name="com.treetrack.FragmentLogin"
+        android:name="com.treetrack.authentication.FragmentLogin"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action

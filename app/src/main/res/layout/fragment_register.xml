@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.treetrack.authentication.FragmentLoginViewModel" />
+            type="com.treetrack.authentication.FragmentRegisterViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,22 +27,36 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:text="@={viewModel.email}"
                 android:layout_height="wrap_content"
-                android:hint="email" />
+                android:hint="email"
+                android:text="@={viewModel.email}" />
 
             <EditText
                 android:layout_width="match_parent"
-                android:text="@={viewModel.password}"
                 android:layout_height="wrap_content"
-                android:hint="password" />
+                android:hint="password"
+                android:text="@={viewModel.password}" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="firstname"
+                android:text="@={viewModel.firstname}" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="lastname"
+                android:text="@={viewModel.lastname}" />
+
 
 
             <Button
                 android:layout_width="match_parent"
-                android:onClick="@{() -> viewModel.login()}"
                 android:layout_height="wrap_content"
-                android:text="Login" />
+                android:onClick="@{() -> viewModel.login()}"
+                android:text="Register" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

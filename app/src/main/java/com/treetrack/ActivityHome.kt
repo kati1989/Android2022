@@ -31,7 +31,7 @@ class ActivityHome : AppCompatActivity() {
         val bottomNavigationView = binding.bottomNav
         bottomNavigationView.setupWithNavController(navController)
 
-        // Setup the ActionBar with navController and 3 top level destinations
+        // Setup the ActionBar with navController and 4 top level destinations
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.fragmentActivities,

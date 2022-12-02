@@ -1,9 +1,10 @@
-package com.treetrack
+package com.treetrack.authentication
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.treetrack.R
 import com.treetrack.databinding.ActivityAuthenticationBinding
 
 class ActivityAuthentication : AppCompatActivity() {
