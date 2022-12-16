@@ -15,4 +15,10 @@
         android:id="@+id/fragmentMyGroups"
         android:icon="@mipmap/ic_launcher_round"
         android:title="My Groups" />
+
+    <item
+        android:id="@+id/fragmentProfile"
+        android:icon="@mipmap/ic_launcher_round"
+        android:title="Profile" />
+
 </menu>

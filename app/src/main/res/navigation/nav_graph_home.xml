@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragmentActivities"
-        android:name="com.treetrack.FragmentActivities"
+        android:name="com.treetrack.activities.FragmentActivities"
         android:label="FragmentActivities"
         tools:layout="@layout/fragment_activities" />
 
@@ -22,5 +22,11 @@
         android:name="com.treetrack.FragmentMyGroups"
         android:label="FragmentMyGroups"
         tools:layout="@layout/fragment_my_groups" />
+
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.treetrack.profile.FragmentProfile"
+        android:label="FragmentProfile"
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>

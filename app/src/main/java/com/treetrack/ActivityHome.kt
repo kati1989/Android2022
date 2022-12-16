@@ -37,6 +37,7 @@ class ActivityHome : AppCompatActivity() {
                 R.id.fragmentActivities,
                 R.id.fragmentMyTasks,
                 R.id.fragmentMyGroups,
+                R.id.fragmentProfile,
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

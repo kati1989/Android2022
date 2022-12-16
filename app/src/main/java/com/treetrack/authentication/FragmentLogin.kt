@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.treetrack.R
 import com.treetrack.databinding.FragmentLoginBinding
 
@@ -31,6 +32,7 @@ class FragmentLogin : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.loginResult.observe(viewLifecycleOwner) {
             saveTokenInSharedPrefs(it.token)
+            findNavController().navigate(R.id.action_fragmentLogin_to_activityHome)
         }
     }
 
@@ -43,9 +45,6 @@ class FragmentLogin : Fragment() {
         }
     }
 
-    private fun getTokenFromSharedPreferences(token: String): String? {
-        val sharedPreferences = activity?.getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
-        return sharedPreferences?.getString("token", "")
-    }
+
 
 }
