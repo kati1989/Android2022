@@ -4,6 +4,9 @@ import com.treetrack.api.data.activities.ActivitiesResponse
 import com.treetrack.api.data.authentication.LoginRequest
 import com.treetrack.api.data.authentication.LoginResponse
 import com.treetrack.api.data.profile.UserResponse
+import com.treetrack.api.data.tasks.TaskRequest
+import com.treetrack.api.data.tasks.TaskResponse
+import com.treetrack.api.data.tasks.TasksResponseItem
 import retrofit2.Response
 
 object ApiRepository {
@@ -18,5 +21,13 @@ object ApiRepository {
 
     suspend fun getActivities(token: String): Response<ActivitiesResponse> {
         return ApiClient.apiClient.getActivities(token)
+    }
+
+    suspend fun getTasks(token: String): Response<ArrayList<TasksResponseItem>> {
+        return ApiClient.apiClient.getTasks(token)
+    }
+
+    suspend fun createTask(token: String, taskRequest: TaskRequest): Response<TaskResponse> {
+        return ApiClient.apiClient.createTask(token, taskRequest)
     }
 }

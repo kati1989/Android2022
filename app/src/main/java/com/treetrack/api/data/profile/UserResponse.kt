@@ -10,7 +10,8 @@ data class UserResponse(
     val last_name: String,
     val location: String?,
     val phone_number: String?,
-    val type: Int
+    val type: Int,
+    val image: String?
 ) {
     //like static in Java
     companion object {
@@ -21,7 +22,8 @@ data class UserResponse(
                 first_name = userResponse.first_name,
                 last_name = userResponse.last_name,
                 location = userResponse.location,
-                phone_number = userResponse.phone_number
+                phone_number = userResponse.phone_number,
+                image = "https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-1.png"
             )
         }
     }

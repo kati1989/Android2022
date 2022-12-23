@@ -28,6 +28,7 @@ class FragmentActivities : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        getTokenFromSharedPreferences()?.let { globalUserViewModel.getProfile(it) }
     }
 
     private fun getTokenFromSharedPreferences(): String? {

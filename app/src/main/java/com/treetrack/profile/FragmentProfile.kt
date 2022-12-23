@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import coil.load
 import com.treetrack.R
 import com.treetrack.authentication.FragmentLoginViewModel
 import com.treetrack.databinding.FragmentProfileBinding
@@ -33,6 +34,12 @@ class FragmentProfile : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         globalUserViewModel.user.observe(viewLifecycleOwner) {
             viewModel.profileUser.value = it
+            loadProfilePicture()
         }
+
+    }
+
+    private fun loadProfilePicture() {
+        binding.ivProfile.load(globalUserViewModel.user.value?.image)
     }
 }
