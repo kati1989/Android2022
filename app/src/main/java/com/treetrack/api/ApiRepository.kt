@@ -1,6 +1,6 @@
 package com.treetrack.api
 
-import com.treetrack.api.data.activities.ActivitiesResponse
+import com.treetrack.api.data.activities.ActivitiesResponseItem
 import com.treetrack.api.data.authentication.LoginRequest
 import com.treetrack.api.data.authentication.LoginResponse
 import com.treetrack.api.data.profile.UserResponse
@@ -19,7 +19,7 @@ object ApiRepository {
         return ApiClient.apiClient.user(token)
     }
 
-    suspend fun getActivities(token: String): Response<ActivitiesResponse> {
+    suspend fun getActivities(token: String): Response<ArrayList<ActivitiesResponseItem>> {
         return ApiClient.apiClient.getActivities(token)
     }
 

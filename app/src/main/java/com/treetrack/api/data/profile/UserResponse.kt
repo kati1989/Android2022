@@ -23,7 +23,7 @@ data class UserResponse(
                 last_name = userResponse.last_name,
                 location = userResponse.location,
                 phone_number = userResponse.phone_number,
-                image = "https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-1.png"
+                image = userResponse.image
             )
         }
     }

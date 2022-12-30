@@ -1,6 +1,6 @@
 package com.treetrack.api
 
-import com.treetrack.api.data.activities.ActivitiesResponse
+import com.treetrack.api.data.activities.ActivitiesResponseItem
 import com.treetrack.api.data.authentication.LoginRequest
 import com.treetrack.api.data.authentication.LoginResponse
 import com.treetrack.api.data.profile.UserResponse
@@ -23,7 +23,7 @@ interface ApiActions {
     suspend fun user(@Header("token") token: String): Response<UserResponse>
 
     @GET("/activity/getActivities")
-    suspend fun getActivities(@Header("token") token: String): Response<ActivitiesResponse>
+    suspend fun getActivities(@Header("token") token: String): Response<ArrayList<ActivitiesResponseItem>>
 
     @GET("/task/getTasks")
     suspend fun getTasks(@Header("token") token: String): Response<ArrayList<TasksResponseItem>>

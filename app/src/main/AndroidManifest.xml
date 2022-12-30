@@ -18,7 +18,7 @@
         <activity
             android:name=".authentication.ActivityAuthentication"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat">
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <!--                action care este main-->
                 <action android:name="android.intent.action.MAIN" />
