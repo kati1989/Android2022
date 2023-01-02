@@ -33,15 +33,38 @@ class FragmentLogin : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        verifyLogin()
+
         viewModel.loginResult.observe(viewLifecycleOwner) {
             saveTokenInSharedPrefs(it.token)
+            saveUsernameAndPassword(viewModel.email.value, viewModel.password.value)
+            findNavController().navigate(R.id.action_fragmentLogin_to_activityHome)
+            activity?.finish()
+        }
+    }
+
+    private fun verifyLogin() {
+        val sharedPreferences = activity?.getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
+        val email = sharedPreferences?.getString("email", null)
+        val password = sharedPreferences?.getString("password", null)
+        if (email != null && password != null) {
             findNavController().navigate(R.id.action_fragmentLogin_to_activityHome)
         }
     }
 
+    private fun saveUsernameAndPassword(email: String?, password: String?) {
+        val sharedPreferences = activity?.getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences?.edit()
+        editor?.apply {
+            putString("email", email)
+            putString("password", password)
+            apply()
+        }
+    }
+
     private fun saveTokenInSharedPrefs(token: String) {
-        val sharedaPreferences = activity?.getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
-        val editor = sharedaPreferences?.edit()
+        val sharedPreferences = activity?.getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences?.edit()
         editor?.apply {
             putString("token", token)
             apply()

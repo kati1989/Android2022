@@ -3,6 +3,8 @@ package com.treetrack.api
 import com.treetrack.api.data.activities.ActivitiesResponseItem
 import com.treetrack.api.data.authentication.LoginRequest
 import com.treetrack.api.data.authentication.LoginResponse
+import com.treetrack.api.data.profile.UpdateUserRequest
+import com.treetrack.api.data.profile.UpdateUserResponse
 import com.treetrack.api.data.profile.UserResponse
 import com.treetrack.api.data.tasks.TaskRequest
 import com.treetrack.api.data.tasks.TaskResponse
@@ -17,6 +19,13 @@ object ApiRepository {
 
     suspend fun user(token: String): Response<UserResponse> {
         return ApiClient.apiClient.user(token)
+    }
+
+    suspend fun updateUserData(
+        token: String,
+        updateUserRequest: UpdateUserRequest
+    ): Response<UpdateUserResponse> {
+        return ApiClient.apiClient.updateUser(token, updateUserRequest)
     }
 
     suspend fun getActivities(token: String): Response<ArrayList<ActivitiesResponseItem>> {

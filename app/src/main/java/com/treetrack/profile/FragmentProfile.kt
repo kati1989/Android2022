@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import coil.load
 import com.treetrack.R
 import com.treetrack.authentication.FragmentLoginViewModel
@@ -36,7 +37,9 @@ class FragmentProfile : Fragment() {
             viewModel.profileUser.value = it
             loadProfilePicture()
         }
-
+        binding.fabUpdateProfile.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentProfile_to_fragmentUpdateProfile)
+        }
     }
 
     private fun loadProfilePicture() {

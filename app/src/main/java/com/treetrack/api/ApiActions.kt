@@ -3,6 +3,8 @@ package com.treetrack.api
 import com.treetrack.api.data.activities.ActivitiesResponseItem
 import com.treetrack.api.data.authentication.LoginRequest
 import com.treetrack.api.data.authentication.LoginResponse
+import com.treetrack.api.data.profile.UpdateUserRequest
+import com.treetrack.api.data.profile.UpdateUserResponse
 import com.treetrack.api.data.profile.UserResponse
 import com.treetrack.api.data.tasks.TaskRequest
 import com.treetrack.api.data.tasks.TaskResponse
@@ -21,6 +23,12 @@ interface ApiActions {
 
     @GET("/user")
     suspend fun user(@Header("token") token: String): Response<UserResponse>
+
+    @POST("/users/updateProfile")
+    suspend fun updateUser(
+        @Header("token") token: String,
+        @Body updateUserRequest: UpdateUserRequest
+    ): Response<UpdateUserResponse>
 
     @GET("/activity/getActivities")
     suspend fun getActivities(@Header("token") token: String): Response<ArrayList<ActivitiesResponseItem>>

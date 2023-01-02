@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.treetrack.api.ApiRepository
+import com.treetrack.api.data.profile.UpdateUserRequest
 import com.treetrack.api.data.profile.UserResponse
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
@@ -15,6 +16,16 @@ class GlobalUserViewModel : ViewModel() {
 
     private fun setGlobalUser(userResponse: UserResponse) {
         user.value = UserResponse.getUserFromUserResponse(userResponse)
+    }
+
+    fun updateGlobalUser(userResponse: UpdateUserRequest) {
+        user.value = user.value?.copy(
+            first_name = userResponse.firstName,
+            last_name = userResponse.lastName,
+            location = userResponse.location,
+            image = userResponse.imageUrl,
+            phone_number = userResponse.phoneNumber,
+        )
     }
 
     fun getProfile(token: String) {
