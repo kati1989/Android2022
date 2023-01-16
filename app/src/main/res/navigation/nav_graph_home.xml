@@ -8,13 +8,13 @@
     <fragment
         android:id="@+id/fragmentActivities"
         android:name="com.treetrack.activities.FragmentActivities"
-        android:label="FragmentActivities"
+        android:label="Activities"
         tools:layout="@layout/fragment_activities" />
 
     <fragment
         android:id="@+id/fragmentMyTasks"
         android:name="com.treetrack.tasks.FragmentMyTasks"
-        android:label="FragmentMyTasks"
+        android:label="My tasks"
         tools:layout="@layout/fragment_my_tasks">
         <action
             android:id="@+id/action_fragmentMyTasks_to_fragmentAddTask"
@@ -24,14 +24,14 @@
     <fragment
         android:id="@+id/fragmentMyGroups"
         android:name="com.treetrack.FragmentMyGroups"
-        android:label="FragmentMyGroups"
+        android:label="My Groups"
         tools:layout="@layout/fragment_my_groups" />
 
     <fragment
         android:id="@+id/fragmentProfile"
         android:name="com.treetrack.profile.FragmentProfile"
-        android:label="FragmentProfile"
-        tools:layout="@layout/fragment_profile" >
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_fragmentProfile_to_fragmentUpdateProfile"
             app:destination="@id/fragmentUpdateProfile" />
@@ -39,11 +39,12 @@
     <fragment
         android:id="@+id/fragmentAddTask"
         android:name="com.treetrack.tasks.FragmentAddTask"
-        android:label="FragmentAddTask"
+        android:label="Add Task"
         tools:layout="@layout/fragment_add_task" />
     <fragment
         android:id="@+id/fragmentUpdateProfile"
         android:name="com.treetrack.profile.FragmentUpdateProfile"
-        android:label="FragmentUpdateProfile" />
+        android:label="FragmentUpdateProfile"
+        tools:layout="@layout/fragment_update_profile" />
 
 </navigation>

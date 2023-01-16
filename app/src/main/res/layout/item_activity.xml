@@ -21,7 +21,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_space_small"
-            android:background="@color/grey"
+            android:background="@drawable/rounded_corner"
             android:orientation="vertical"
             android:padding="@dimen/default_space_small"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:text="Created by user id:"
                     android:textSize="20sp" />
 
@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:text="@{Integer.toString(activity.created_by_user_id)}"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     tools:text="2" />
             </LinearLayout>
 
@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:setTextDate="@{activity.created_time}"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     tools:text="June 01 2021" />
             </LinearLayout>
 
@@ -89,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:text="@{activity.note}"
-                    android:textSize="20sp"
+                    android:textSize="14sp"
                     tools:text="1" />
             </LinearLayout>
 
@@ -110,8 +110,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="@{Integer.toString(activity.sub_type)}"
-                    android:textSize="20sp"
+                    android:setSubTypeOfActivity="@{activity.sub_type}"
+                    android:textSize="14sp"
                     tools:text="1" />
             </LinearLayout>
 
@@ -133,7 +133,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:text="@{Integer.toString(activity.sub_ID)}"
-                    android:textSize="20sp"
+                    android:textSize="14sp"
                     tools:text="1" />
             </LinearLayout>
 
@@ -154,8 +154,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="@{Integer.toString(activity.type)}"
-                    android:textSize="20sp"
+                    android:setTypeOfActivity="@{activity.type}"
+                    android:textSize="14sp"
                     tools:text="1" />
             </LinearLayout>
         </LinearLayout>

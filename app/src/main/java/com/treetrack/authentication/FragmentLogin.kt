@@ -34,13 +34,6 @@ class FragmentLogin : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         verifyLogin()
-
-        viewModel.loginResult.observe(viewLifecycleOwner) {
-            saveTokenInSharedPrefs(it.token)
-            saveUsernameAndPassword(viewModel.email.value, viewModel.password.value)
-            findNavController().navigate(R.id.action_fragmentLogin_to_activityHome)
-            activity?.finish()
-        }
     }
 
     private fun verifyLogin() {
@@ -48,7 +41,23 @@ class FragmentLogin : Fragment() {
         val email = sharedPreferences?.getString("email", null)
         val password = sharedPreferences?.getString("password", null)
         if (email != null && password != null) {
+            viewModel.verifyLogin()
+            viewModel.loginResultVerifyLogin.observe(viewLifecycleOwner) {
+                saveTokenInSharedPrefs(it.token)
+                saveUsernameAndPassword(viewModel.email.value, viewModel.password.value)
+                findNavController().navigate(R.id.action_fragmentLogin_to_activityHome)
+            }
+        } else {
+            normalLogin()
+        }
+    }
+
+    private fun normalLogin() {
+        viewModel.loginResult.observe(viewLifecycleOwner) {
+            saveTokenInSharedPrefs(it.token)
+            saveUsernameAndPassword(viewModel.email.value, viewModel.password.value)
             findNavController().navigate(R.id.action_fragmentLogin_to_activityHome)
+
         }
     }
 

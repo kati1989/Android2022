@@ -98,6 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/default_space"
             android:layout_marginBottom="@dimen/default_space"
+            android:backgroundTint="@color/dark_blue"
             android:src="@drawable/ic_profile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />

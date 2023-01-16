@@ -1,5 +1,6 @@
 package com.treetrack.profile
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,9 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import coil.load
 import com.treetrack.R
-import com.treetrack.authentication.FragmentLoginViewModel
 import com.treetrack.databinding.FragmentProfileBinding
-import com.treetrack.profile.GlobalUserViewModel
 
 
 class FragmentProfile : Fragment() {
@@ -44,5 +43,16 @@ class FragmentProfile : Fragment() {
 
     private fun loadProfilePicture() {
         binding.ivProfile.load(globalUserViewModel.user.value?.image)
+    }
+
+    private fun deleteSharedPrefsValues() {
+        val sharedPreferences = activity?.getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences?.edit()
+        editor?.apply {
+            putString("email", "")
+            putString("password", "")
+            putString("token", "")
+            apply()
+        }
     }
 }

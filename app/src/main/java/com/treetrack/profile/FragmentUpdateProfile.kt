@@ -1,5 +1,6 @@
 package com.treetrack.profile
 
+import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -72,9 +73,8 @@ class FragmentUpdateProfile : Fragment() {
                     return@launch
                 }
                 if (response.isSuccessful && response.body() != null) {
-                    Toast.makeText(activity, "Profile updated successfully!", Toast.LENGTH_SHORT)
-                        .show()
                     globalUserViewModel.updateGlobalUser(uur)
+                    showSuccessPrompt()
                 } else {
                     Log.e("FragmentUpdateProfile", "Response not successful")
                 }
@@ -85,6 +85,16 @@ class FragmentUpdateProfile : Fragment() {
     private fun getTokenFromSharedPreferences(): String? {
         val sharedPreferences = activity?.getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
         return sharedPreferences?.getString("token", "")
+    }
+
+    private fun showSuccessPrompt() {
+        val builder = AlertDialog.Builder(this.context)
+        builder.setMessage("Profile updated successfully!")
+        builder.setPositiveButton("OK") { dialog, which ->
+
+        }
+        val dialog = builder.create()
+        dialog.show()
     }
 }
 
