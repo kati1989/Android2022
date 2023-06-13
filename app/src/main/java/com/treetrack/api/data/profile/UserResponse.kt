@@ -6,12 +6,12 @@ data class UserResponse(
     val ID: Int,
     val department_id: Int,
     val email: String,
-    val first_name: String,
-    val last_name: String,
-    val location: String?,
-    val phone_number: String?,
+    var first_name: String,
+    var last_name: String,
+    var location: String?,
+    var phone_number: String?,
     val type: Int,
-    val image: String?
+    var image: String?
 ) {
     //like static in Java
     companion object {
